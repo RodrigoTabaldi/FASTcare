@@ -1,0 +1,69 @@
+================================================================================
+PRÓXIMAS ETAPAS - Integração de Imagens Infográficas
+================================================================================
+
+SITUAÇÃO ATUAL:
+✅ Componente Tip.tsx atualizado para carregar imagens PNG
+✅ Fallback SVG em lugar (placeholders funcionais)
+✅ 4 commits realizados na branch: claude/educational-tooltips-scales-i51mhk
+✅ Documentação completa criada
+
+PRÓXIMO PASSO - Adicionar as Imagens PNG:
+
+1. Você tem duas imagens infográficas que precisam ser colocadas em:
+
+   public/images/mudanca-posicao.png
+   public/images/rotina-visual.png
+
+2. Após adicionar as imagens PNG, execute:
+
+   git add public/images/mudanca-posicao.png
+   git add public/images/rotina-visual.png
+   git commit -m "Adiciona imagens infográficas educativas nos balões de dica"
+   git push -u origin claude/educational-tooltips-scales-i51mhk
+
+3. Teste localmente (opcional):
+   npm run dev
+   # Vá até etapa 7 e clique nos balões de dica para verificar
+
+4. Build final:
+   npm run build
+
+ARQUIVOS DE DOCUMENTAÇÃO:
+- IMPLEMENTATION_SUMMARY.md (resumo técnico completo)
+- QUICK_START_IMAGES.md (referência rápida)
+- IMAGES_SETUP.md (guia detalhado)
+- public/images/README.md (instruções no diretório de assets)
+
+COMMITS PRONTOS:
+✅ b70679a Adiciona resumo completo da implementação
+✅ f924eb5 Adiciona referência rápida para adição de imagens
+✅ 0e377bc Adiciona guia completo para integração de imagens
+✅ 75f0735 Implementa suporte para imagens infográficas
+
+STATUS DO BUILD:
+✅ TypeScript: Sem erros
+✅ Vite: 181.47 kB JS, 24.41 kB CSS (gzipped)
+✅ Componentes: Todos compilando corretamente
+
+QUANDO AS IMAGENS FOREM ADICIONADAS:
+- Os balões "Mudança de Posição" (etapa 7) exibirão mudanca-posicao.png
+- Os balões "Rotina Visual do Dia" (etapa 7) exibirão rotina-visual.png
+- Todos os outros balões continuam com SVG original
+- Site funcionará perfeitamente em Vercel/Netlify
+
+PERGUNTAS FREQUENTES:
+
+P: O site funciona sem as imagens PNG?
+R: Sim! Os placeholders SVG funcionam perfeitamente como fallback.
+
+P: Que tamanho devem ter as imagens PNG?
+R: Qualquer tamanho funciona. Recomendado: 320×150px ou similar.
+
+P: Depois de adicionar as imagens PNG, preciso mudar código?
+R: Não! As imagens são carregadas automaticamente quando adicionadas.
+
+P: Como testar localmente antes de fazer push?
+R: Execute "npm run dev" e navegue até a etapa 7.
+
+================================================================================

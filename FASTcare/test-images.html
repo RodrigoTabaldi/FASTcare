@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Teste de Imagens</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .test { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+    img { max-width: 400px; border: 1px solid #999; }
+    .error { color: red; font-weight: bold; }
+    .success { color: green; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Teste de Carregamento de Imagens</h1>
+  
+  <div class="test">
+    <h2>Imagem 1: Mudança de Posição</h2>
+    <p>Caminho: /images/mudanca-posicao.png</p>
+    <img src="/images/mudanca-posicao.png" onload="this.parentElement.className+=' success'" onerror="this.parentElement.className+=' error'" alt="Mudança de Posição">
+    <div id="status1">Carregando...</div>
+  </div>
+
+  <div class="test">
+    <h2>Imagem 2: Rotina Visual</h2>
+    <p>Caminho: /images/rotina-visual.png</p>
+    <img src="/images/rotina-visual.png" onload="this.parentElement.className+=' success'" onerror="this.parentElement.className+=' error'" alt="Rotina Visual">
+    <div id="status2">Carregando...</div>
+  </div>
+
+  <script>
+    console.log("Teste de imagens iniciado");
+    console.log("Local: " + window.location.href);
+  </script>
+</body>
+</html>
