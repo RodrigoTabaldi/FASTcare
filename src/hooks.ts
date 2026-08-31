@@ -51,7 +51,7 @@ export function useScrollProgress(): void {
 }
 
 /** conta de 0 até target quando entra na tela */
-export function useCountUp(target: number, duration = 1400): [React.RefObject<HTMLSpanElement>, string] {
+export function useCountUp(target: number, duration = 1400): [React.RefObject<HTMLSpanElement | null>, string] {
   const ref = useRef<HTMLSpanElement>(null);
   const [val, setVal] = useState(0);
   useEffect(() => {

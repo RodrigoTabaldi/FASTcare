@@ -5,8 +5,9 @@ const LINKS = [
   { href: "#escala", label: "A escala" },
   { href: "#etapas", label: "As 7 etapas" },
   { href: "#autoteste", label: "Checklist" },
+  { href: "#cuidados", label: "Cuidados" },
+  { href: "#comunidade", label: "Comunidade" },
   { href: "#recursos", label: "Sinais de alerta" },
-  { href: "#glossario", label: "Glossário" },
 ];
 
 export default function Header() {

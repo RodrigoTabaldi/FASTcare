@@ -4,43 +4,43 @@ Site educativo sobre as **7 etapas da escala FAST** (Functional Assessment
 Staging Tool, Reisberg et al.) para cuidadores e familiares de idosos com
 suspeita de demência.
 
-Stack: **React 18 + TypeScript + Vite**. Sem backend — todo o conteúdo é
-estático. Build gera uma pasta `dist/` pronta para qualquer host estático.
+Stack: **Next.js + React + TypeScript** (App Router).
 
 ## Rodar local
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173
+npm run dev      # http://localhost:3000
 ```
 
 ## Build de produção
 
 ```bash
-npm run build    # gera dist/
-npm run preview  # serve a build localmente
+npm run build
+npm start
 ```
 
 ## Deploy
 
-Projeto 100% estático. Escolha um:
+O projeto está configurado para Next.js na Vercel e no Netlify. Defina
+`NEXT_PUBLIC_SITE_URL` com a URL pública para canonical, sitemap e Open Graph.
 
-- **Vercel** — importe o repo. Detecta Vite via `vercel.json` (build `npm run build`, output `dist`).
-- **Netlify** — `netlify.toml` já configura build `npm run build` e publish `dist`.
-- **GitHub Pages / S3 / qualquer estático** — rode `npm run build` e suba a pasta `dist/`.
+O formulário de feedback não armazena dados por padrão. Para habilitar o envio
+à fila de aprovação, defina `FEEDBACK_MODERATION_WEBHOOK` com um endpoint seguro
+que receba os itens com status `pending`. A publicação deve acontecer apenas no
+sistema de moderação, após autenticação e revisão do administrador.
 
 ## Estrutura
 
 ```
 fastcare/
-├── index.html
+├── app/               # rotas, SEO e endpoint de feedback
 ├── package.json
-├── vite.config.ts
+├── next.config.mjs
 ├── tsconfig.json
 ├── vercel.json
 ├── netlify.toml
 └── src/
-    ├── main.tsx
     ├── App.tsx
     ├── styles.css
     ├── data.ts          # 7 etapas FAST + sintomas

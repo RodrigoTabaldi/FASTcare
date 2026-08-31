@@ -145,7 +145,11 @@ export const TOC: TocItem[] = [
   { id: "escala", label: "Sobre a escala" },
   { id: "etapas", label: "As 7 etapas" },
   { id: "autoteste", label: "Checklist" },
+  { id: "cuidados", label: "Cuidados práticos" },
+  { id: "farmacia-popular", label: "Farmácia Popular" },
   { id: "recursos", label: "Sinais de alerta" },
+  { id: "comunidade", label: "Comunidade" },
+  { id: "feedback", label: "Feedback" },
   { id: "glossario", label: "Glossário" },
   { id: "citacao", label: "Como citar" },
 ];

@@ -16,6 +16,7 @@ export default function Autoteste() {
   else if (score > 9) { level = "Sinais relevantes"; idx = 6; }
   const barColor = SEV[idx];      // cor viva para a barra
   const textColor = SEV_TEXT[idx]; // variante escura, legível sobre branco
+  const estimatedStage = score === 0 ? 0 : Math.min(6, Math.max(1, Math.ceil(score / 3)));
 
   return (
     <section className="check-sec" id="autoteste">
@@ -51,6 +52,13 @@ export default function Autoteste() {
               {score > 0 && score <= 9 && " Vale agendar uma avaliação cognitiva."}
               {score === 0 && " Nenhum sinal marcado até agora."}
             </p>
+            {score > 0 && (
+              <div className="stage-indication" style={{ borderColor: SEV[estimatedStage] }}>
+                <span className="mono">FAIXA DE ATENÇÃO</span>
+                <strong>Os sinais selecionados se aproximam de cuidados descritos entre FAST {Math.max(2, estimatedStage)} e {Math.min(7, estimatedStage + 2)}.</strong>
+                <a href="#etapas">Comparar com as etapas e preparar a consulta →</a>
+              </div>
+            )}
             <p className="disclaimer-inline">
               Ferramenta educativa. Apenas um profissional de saúde pode aplicar a escala FAST
               e fechar um diagnóstico.

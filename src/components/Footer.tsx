@@ -34,6 +34,9 @@ export default function Footer() {
             <a href="#escala">A escala FAST</a>
             <a href="#etapas">As 7 etapas</a>
             <a href="#autoteste">Checklist de sinais</a>
+            <a href="#cuidados">Cuidados práticos</a>
+            <a href="#farmacia-popular">Farmácia Popular</a>
+            <a href="#comunidade">Comunidade</a>
             <a href="#recursos">Sinais de alerta</a>
           </div>
           <div>
@@ -43,6 +46,8 @@ export default function Footer() {
               <a href="https://pubmed.ncbi.nlm.nih.gov/1504288/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov/1504288</a><br />
               Avante Nestlé — apoio ao cuidador.<br />
               <a href="https://www.avantenestle.com.br/" target="_blank" rel="noopener">avantenestle.com.br</a>
+              <br />Ministério da Saúde — Linha de Cuidado para Demência.
+              <br /><a href="https://linhasdecuidado.saude.gov.br/portal/demencia/" target="_blank" rel="noopener">linhasdecuidado.saude.gov.br</a>
             </p>
           </div>
         </div>
