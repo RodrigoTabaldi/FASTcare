@@ -11,6 +11,8 @@
  * Criar LLM de chatbot para orientaçoes e dúvidas dos cuidadores.
  * Otimizar o site para busca no google, com SEO e palavras chaves.
  * usar instruçoes de referencia fichas-condut-demencia-mvp
- ************************
+ * Adicinar um local de feedback que passa pela aprovação do administrador do site.
+ * Adicionar formas de manter um comunidade ativa.
+
 
   
