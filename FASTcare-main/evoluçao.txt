@@ -1,0 +1,18 @@
+ 
+         Novas funcionalidades e Evolução do Site
+ 
+ * Mudar a stack do site para typescript, react e nextjs.
+ * Incluir novos indices com atividades mais delicadas, como parte financeira e de higiene.
+ * Adicinar interatividade com a seleção de sinais apontando o nivel da escala de evolução.
+ * Adicionar mensagens de identificação do cuidador.
+ * Deixar claro o publico alvo no site, que são cuidadores de pessoas com demencia, principalmente idosos com demencia.
+ * Otimizar e deixar acessivel o site no mobile e pc.
+ * Adicionar localizaçao de que participam do programa farmacia popular.
+ * Criar LLM de chatbot para orientaçoes e dúvidas dos cuidadores.
+ * Otimizar o site para busca no google, com SEO e palavras chaves.
+ * usar instruçoes de referencia fichas-condut-demencia-mvp
+ * Adicinar um local de feedback que passa pela aprovação do administrador do site.
+ * Adicionar formas de manter um comunidade ativa.....
+
+
+  
