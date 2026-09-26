@@ -73,13 +73,12 @@ export const STAGES: Stage[] = [
     sinais: ["Vocabulário muito limitado ou ausente", "Perda da capacidade de andar e sentar", "Perda do sorriso e do controle da cabeça"],
     acoes: ["Cuidados paliativos e conforto", "Prevenir úlceras e aspiração", "Nutrição e hidratação assistidas"],
     prof: "Cuidados paliativos + equipe completa",
-    subs: ["7a · ~6 palavras", "7b · 1 palavra", "7c · não anda", "7d · não senta", "7e · não sorri", "7f · sem controle cefálico"],
   },
 ];
 
 /** dicas práticas exibidas em balões clicáveis dentro das etapas.
  *  a chave é o texto exato do sinal/ação ao qual a dica se associa. */
-export interface TipCard { icon: string; title: string; body: string; image?: string; }
+export interface TipCard { icon: string; title: string; body: string; image?: string; href?: string; linkLabel?: string; }
 // Conteúdo transcrito do material enviado para todos os tópicos da escala.
 export const TIPS: Record<string, TipCard> = {
   "Funcionamento Cognitivo Preservado": { icon: "people", title: "Funcionamento Cognitivo Preservado", body: "Recorda fatos facilmente, narra acontecimentos cotidianos com crítica e coerência, e identifica o nome de objetos inclusive os menos usuais." },
@@ -115,7 +114,7 @@ export const TIPS: Record<string, TipCard> = {
   "Ambiente seguro e sinalizado": { icon: "routine", title: "Ambiente seguro e sinalizado", body: "(tire as chaves das portas e deixe cópias guardadas em um local seguro; coloque fitas coloridas no chão marcando o caminho entre os principais cômodos da casa; coloque etiquetas nomeando cada ambiente e principais objetos, ex: cozinha, armário, quarto, cadeira)", image: "/images/tips/level5-ambiente-seguro.webp" },
   "Apoio domiciliar de cuidador": { icon: "people", title: "Apoio domiciliar de cuidador", body: "(busque cuidadores ou outros familiares para auxiliar no dia a dia, principalmente no final da tarde em que é possível apresentarem agitação ou agressividade; identifique os cuidadores e pessoas da rotina com fotos e nomes, sendo possível, coloque fotos em que estejam juntos para que seja familiar; crie escalas de rodízio entre os cuidadores para não ter sobrecarga)", image: "/images/tips/level5-apoio-cuidador.webp" },
   "Dificuldade para vestir-se sozinho": { icon: "people", title: "Dificuldade para vestir-se sozinho", body: "(coloca as peças de roupas em lugares errados, ex: cueca na cabeça, camisa na perna; não aceita a roupa que foi escolhida)", image: "/images/tips/level6-vestir.webp" },
-  "Necessita ajuda no banho": { icon: "people", title: "Necessita ajuda no banho", body: "o banho pode gerar algumas dificuldades, clique aqui para acessar as orientações mais detalhadas) *LINK QUE LEVA PARA O ITEM DE AUTOCUIDADO E HIGIENE*", image: "/images/tips/level6-banho.webp" },
+  "Necessita ajuda no banho": { icon: "people", title: "Necessita ajuda no banho", body: "o banho pode gerar algumas dificuldades, clique aqui para acessar as orientações mais detalhadas", image: "/images/tips/level6-banho.webp", href: "#cuidado-banho", linkLabel: "Ver orientações para o banho" },
   "Incontinência urinária e/ou fecal": { icon: "people", title: "Incontinência urinária e/ou fecal", body: "(evacua nas calças; não avisa que quer ir ao banheiro; suja a roupa e não aceita ser limpo)" },
   "Rotina de higiene assistida": { icon: "people", title: "Rotina de higiene assistida", body: "ofereça uma peça limpa, familiar e confortável; evite comentários constrangedores sobre aparência ou odor; o uso de fralda pode ser necessário, se houver recusa, explique que é uma calcinha ou cueca diferente e moderna e que ajudará no seu conforto", image: "/images/tips/level6-higiene.webp" },
   "Recusa a troca da fralda": { icon: "people", title: "Recusa a troca da fralda", body: "(Feche a porta e deixe o ambiente seguro para que ninguém entre, é importante que a pessoa não fique envergonhado ou constrangido; ninguém se troca na frente de outras pessoas, por isso, explique cada passo e exponha apenas a região que precisa ser higienizada, preservando a intimidade; nunca faça a troca à força; usar uma boneca como exemplo pode ajudar)." },
@@ -126,12 +125,6 @@ export const TIPS: Record<string, TipCard> = {
   "6c · higiene": { icon: "people", title: "6c · higiene", body: "" },
   "6d · incont. urinária": { icon: "people", title: "6d · incont. urinária", body: "" },
   "6e · incont. fecal": { icon: "people", title: "6e · incont. fecal", body: "" },
-  "7a · ~6 palavras": { icon: "people", title: "7a · ~6 palavras", body: "" },
-  "7b · 1 palavra": { icon: "people", title: "7b · 1 palavra", body: "" },
-  "7c · não anda": { icon: "people", title: "7c · não anda", body: "" },
-  "7d · não senta": { icon: "people", title: "7d · não senta", body: "" },
-  "7e · não sorri": { icon: "people", title: "7e · não sorri", body: "" },
-  "7f · sem controle cefálico": { icon: "people", title: "7f · sem controle cefálico", body: "" },
   "Vocabulário muito limitado ou ausente": { icon: "people", title: "Vocabulário muito limitado ou ausente", body: "(não consegue se comunicar nem com frases simples; perda de compreensão em geral; deixa de conhecer as pessoas a sua volta; não inicia ou mantém diálogo)" },
   "Perda da capacidade de andar e sentar": { icon: "people", title: "Perda da capacidade de andar e sentar", body: "(não mantém apoio ao sentar-se, dificuldade para andar e ficar em pé mesmo que por pouco tempo, rigidez em pernas e braços)" },
   "Perda do sorriso e do controle da cabeça": { icon: "people", title: "Perda do sorriso e do controle da cabeça", body: "(mantém sempre a cabeça para baixo; não mantém contato de olho; fica com a mesma expressão a maior parte do tempo)" },

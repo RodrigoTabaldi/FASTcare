@@ -243,6 +243,7 @@ export default function Tip({ card, showIllustration = true }: { card: TipCard; 
           <div className="tip-text">
             <strong>{card.title}</strong>
             {card.body && <p>{card.body}</p>}
+            {card.href && <a className="tip-link" href={card.href} onClick={() => setOpen(false)}>{card.linkLabel ?? "Saiba mais"} <span aria-hidden="true">→</span></a>}
           </div>
         </div>
       )}

@@ -110,6 +110,13 @@ export default function Etapas({ suggestedStage }: EtapasProps) {
             <span className="prof highlight-prof"><Logo size={18} /> <strong>Profissional indicado:</strong> {s.prof}</span>
           </div>
         </div>
+
+        <div className="care-cta-wrap">
+          <a className="care-cta" href="#cuidados-especiais">
+            Saiba mais sobre cuidados do dia a dia
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
       </div>
     </section>
   );
