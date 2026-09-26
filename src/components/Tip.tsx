@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from
 import type { TipCard } from "../data";
 
 /** ilustrações (cenas) grandes que representam cada dica de forma clara */
-function TipScene({ name }: { name: string }) {
+function TipScene({ name, image }: { name: string; image?: string }) {
   const svg = {
     viewBox: "0 0 320 150", width: "100%", height: "100%",
     preserveAspectRatio: "xMidYMid slice", "aria-hidden": true,
@@ -14,11 +14,13 @@ function TipScene({ name }: { name: string }) {
     routine: "/images/rotina-visual.png",
   };
 
-  if (imageIcons[name]) {
+  if (image || imageIcons[name]) {
     return (
       <img
-        src={imageIcons[name]}
+        src={image ?? imageIcons[name]}
         alt=""
+        loading="lazy"
+        decoding="async"
         style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: "12px", display: "block" }}
       />
     );
@@ -166,7 +168,7 @@ function TipScene({ name }: { name: string }) {
   }
 }
 
-export default function Tip({ card }: { card: TipCard }) {
+export default function Tip({ card, showIllustration = true }: { card: TipCard; showIllustration?: boolean }) {
   const [open, setOpen] = useState(false);
   const btnRef = useRef<HTMLButtonElement>(null);
   const popRef = useRef<HTMLDivElement>(null);
@@ -235,13 +237,12 @@ export default function Tip({ card }: { card: TipCard }) {
       </button>
 
       {open && (
-        <div ref={popRef} className="tip-pop" role="dialog" aria-label={card.title} style={pos}>
+        <div ref={popRef} className={"tip-pop" + (showIllustration ? "" : " text-only")} role="dialog" aria-label={card.title} style={pos}>
           <button type="button" className="tip-close" aria-label="Fechar dica" onClick={() => setOpen(false)}>×</button>
-          <div className="tip-illus"><TipScene name={card.icon} /></div>
+          {showIllustration && <div className="tip-illus"><TipScene name={card.icon} image={card.image} /></div>}
           <div className="tip-text">
             <strong>{card.title}</strong>
-            <p>{card.body}</p>
-            <p className="tip-foot">Orientação educativa — procure sempre um profissional de saúde.</p>
+            {card.body && <p>{card.body}</p>}
           </div>
         </div>
       )}
