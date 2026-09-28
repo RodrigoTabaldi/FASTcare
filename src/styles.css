@@ -262,12 +262,20 @@ section{padding:92px 0;position:relative;}
 .dblock li.has-tip::before{content:"•";color:var(--gold-ink);font-weight:800;line-height:1.5;}
 .tip{display:inline-flex;}
 .tip-btn{
-  width:22px;height:22px;flex:0 0 auto;border-radius:50%;display:grid;place-items:center;
+  position:relative;width:22px;height:22px;flex:0 0 auto;border-radius:50%;display:grid;place-items:center;
   color:var(--tinta);background:var(--paper-2);border:1.5px solid var(--paper-line);
   margin-top:1px;transition:background .18s,color .18s,border-color .18s,transform .18s var(--ease);
 }
 .tip-btn:hover{background:var(--tinta);color:var(--paper);border-color:var(--tinta);transform:translateY(-1px);}
 .tip-btn.on{background:var(--tinta);color:var(--paper);border-color:var(--tinta);}
+.tip-btn:focus-visible{outline:3px solid var(--gold-ink);outline-offset:3px;}
+.tip-btn.on .tip-finger{display:none;}
+.tip-btn.hint:not(.on)::after{content:"";position:absolute;inset:-5px;border:2px solid var(--gold-ink);border-radius:50%;pointer-events:none;animation:tip-pulse 1.6s ease-out infinite;}
+.tip-finger{position:absolute;right:-15px;bottom:-20px;font-size:23px;line-height:1;pointer-events:none;transform-origin:50% 15%;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25));animation:tip-tap 1.6s ease-in-out infinite;}
+@keyframes tip-tap{0%,28%,100%{transform:translate(0,0) rotate(0) scale(1)}48%{transform:translate(-8px,-12px) rotate(-18deg) scale(1.2)}58%{transform:translate(-5px,-5px) rotate(-8deg) scale(.9)}68%{transform:translate(-8px,-12px) rotate(-18deg) scale(1.15)}80%{transform:translate(0,0) rotate(0) scale(1)}}
+@keyframes tip-pulse{0%,35%{transform:scale(.75);opacity:0}48%{transform:scale(.75);opacity:.8}78%,100%{transform:scale(1.45);opacity:0}}
+@media(prefers-reduced-motion:reduce){.tip-finger{animation:none;}}
+@media(prefers-reduced-motion:reduce){.tip-btn.hint:not(.on)::after{animation:none;}}
 .tip-pop{
   z-index:120;background:var(--paper);color:var(--tinta);border:1px solid var(--paper-line);
   border-radius:18px;box-shadow:0 24px 55px rgba(13,59,102,.32);overflow:hidden;

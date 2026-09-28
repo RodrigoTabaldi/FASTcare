@@ -85,7 +85,7 @@ export default function Etapas({ suggestedStage }: EtapasProps) {
                 <h4>Sinais observáveis</h4>
                 <ul>{s.sinais.map((x, i) => (
                   <li key={i} className={TIPS[x] ? "has-tip" : undefined}>
-                    {x}{TIPS[x] && <Tip card={TIPS[x]} showIllustration={!!TIPS[x].image} />}
+                    {x}{TIPS[x] && <Tip card={TIPS[x]} showIllustration={!!TIPS[x].image} showFinger={i === 0} />}
                   </li>
                 ))}</ul>
               </div>

@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
 import type { TipCard } from "../data";
 
 /** ilustrações (cenas) grandes que representam cada dica de forma clara */
@@ -168,8 +168,9 @@ function TipScene({ name, image }: { name: string; image?: string }) {
   }
 }
 
-export default function Tip({ card, showIllustration = true }: { card: TipCard; showIllustration?: boolean }) {
+export default function Tip({ card, showIllustration = true, showFinger = false }: { card: TipCard; showIllustration?: boolean; showFinger?: boolean }) {
   const [open, setOpen] = useState(false);
+  const tipId = useId();
   const btnRef = useRef<HTMLButtonElement>(null);
   const popRef = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState<CSSProperties>({});
@@ -224,9 +225,10 @@ export default function Tip({ card, showIllustration = true }: { card: TipCard; 
       <button
         ref={btnRef}
         type="button"
-        className={"tip-btn" + (open ? " on" : "")}
+        className={"tip-btn" + (open ? " on" : "") + (showFinger ? " hint" : "")}
         aria-expanded={open}
-        aria-label={"Ver dica: " + card.title}
+        aria-label={"Mais informações: " + card.title}
+        aria-controls={tipId}
         onClick={() => setOpen((v) => !v)}
       >
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -234,14 +236,15 @@ export default function Tip({ card, showIllustration = true }: { card: TipCard; 
           <circle cx="12" cy="12" r="9" />
           <path d="M12 11v5" /><path d="M12 7.5h.01" />
         </svg>
+        {showFinger && <span className="tip-finger" aria-hidden="true">👆</span>}
       </button>
 
       {open && (
-        <div ref={popRef} className={"tip-pop" + (showIllustration ? "" : " text-only")} role="dialog" aria-label={card.title} style={pos}>
+        <div ref={popRef} id={tipId} className={"tip-pop" + (showIllustration ? "" : " text-only")} role="dialog" aria-labelledby={tipId + "-title"} style={pos}>
           <button type="button" className="tip-close" aria-label="Fechar dica" onClick={() => setOpen(false)}>×</button>
           {showIllustration && <div className="tip-illus"><TipScene name={card.icon} image={card.image} /></div>}
           <div className="tip-text">
-            <strong>{card.title}</strong>
+            <strong id={tipId + "-title"}>{card.title}</strong>
             {card.body && <p>{card.body}</p>}
             {card.href && <a className="tip-link" href={card.href} onClick={() => setOpen(false)}>{card.linkLabel ?? "Saiba mais"} <span aria-hidden="true">→</span></a>}
           </div>
