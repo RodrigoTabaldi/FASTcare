@@ -236,6 +236,7 @@ export default function Tip({ card, showIllustration = true, showFinger = false 
           <circle cx="12" cy="12" r="9" />
           <path d="M12 11v5" /><path d="M12 7.5h.01" />
         </svg>
+        <span className="tip-label">Dica</span>
         {showFinger && <span className="tip-finger" aria-hidden="true">👆</span>}
       </button>
 

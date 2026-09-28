@@ -34,8 +34,7 @@ export default function Etapas({ suggestedStage }: EtapasProps) {
         <div className="sec-head reveal">
           <span className="eyebrow">As 7 etapas · interativo</span>
           <h2>Percorra a trilha FAST</h2>
-          <p>Toque em uma etapa para ver os sinais, as ações práticas e o profissional indicado.
-            No teclado, use as setas para navegar.</p>
+          <p>Selecione uma etapa para ver os sinais, as ações práticas e o profissional indicado. Nos itens com o selo “Dica”, clique para abrir uma explicação. No teclado, use as setas para navegar.</p>
         </div>
 
         <div className="trail" role="tablist" aria-label="Etapas da escala FAST">
@@ -55,6 +54,7 @@ export default function Etapas({ suggestedStage }: EtapasProps) {
             >
               <span className="dot" style={{ background: SEV[i], color: SEV_ON[i] }}>{st.n}</span>
               <span className="lab">{st.sev}</span>
+              <span className="node-action">{i === act ? "Etapa aberta" : "Ver etapa"}</span>
             </button>
           ))}
         </div>
