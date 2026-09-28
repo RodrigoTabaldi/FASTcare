@@ -278,8 +278,8 @@ section{padding:92px 0;position:relative;}
 .tip-btn svg{flex:0 0 auto;}
 .tip-btn.on .tip-finger{display:none;}
 .tip-btn.hint:not(.on)::after{content:"";position:absolute;inset:-3px;border:2px solid var(--gold-ink);border-radius:50%;pointer-events:none;animation:tip-pulse .9s ease-out infinite;}
-.tip-finger{position:absolute;right:-26px;bottom:-30px;font-family:"Segoe UI Emoji","Apple Color Emoji",sans-serif;font-size:34px;line-height:1;display:block;pointer-events:none;transform-origin:50% 80%;filter:drop-shadow(0 3px 3px rgba(0,0,0,.35));animation:tip-tap .85s cubic-bezier(.35,0,.2,1) infinite;will-change:transform;}
-@keyframes tip-tap{0%,100%{transform:translate(0,0) rotate(0) scale(1)}20%{transform:translate(-30px,-34px) rotate(-12deg) scale(1.08)}32%{transform:translate(-19px,-14px) rotate(3deg) scale(.88)}45%{transform:translate(-30px,-34px) rotate(-12deg) scale(1.08)}57%{transform:translate(-19px,-14px) rotate(3deg) scale(.88)}70%{transform:translate(-30px,-34px) rotate(-12deg) scale(1.08)}82%{transform:translate(0,0) rotate(0) scale(1)}}
+.tip-finger{position:absolute;right:-26px;bottom:-30px;font-family:"Segoe UI Emoji","Apple Color Emoji",sans-serif;font-size:34px;line-height:1;display:block;pointer-events:none;transform-origin:50% 80%;filter:drop-shadow(0 3px 3px rgba(0,0,0,.35));animation:tip-tap 2s ease-in-out infinite;will-change:transform;}
+@keyframes tip-tap{0%,100%{transform:translate(0,0) rotate(0) scale(1)}50%{transform:translate(-8px,-10px) rotate(-3deg) scale(1.02)}}
 @keyframes tip-pulse{0%{transform:scale(.65);opacity:1}75%,100%{transform:scale(1.35);opacity:0}}
 @media(prefers-reduced-motion:reduce){.tip-finger{animation:none;}}
 @media(prefers-reduced-motion:reduce){.tip-btn.hint:not(.on)::after{animation:none;}}
