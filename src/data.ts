@@ -20,7 +20,6 @@ export interface Stage {
   sinais: string[];
   acoes: string[];
   prof: string;
-  subs?: string[];
 }
 
 export const STAGES: Stage[] = [
@@ -65,7 +64,6 @@ export const STAGES: Stage[] = [
     sinais: ["Dificuldade para vestir-se sozinho", "Necessita ajuda no banho", "Incontinência urinária e/ou fecal"],
     acoes: ["Rotina de higiene assistida", "Recusa a troca da fralda", "Prevenir quedas e lesões de pele", "Apoio emocional ao cuidador"],
     prof: "Enfermagem + cuidador + geriatra",
-    subs: ["6a · vestir", "6b · banho", "6c · higiene", "6d · incont. urinária", "6e · incont. fecal"],
   },
   {
     n: 7, sev: "Demência grave", title: "Perda da fala e da mobilidade",
@@ -120,11 +118,6 @@ export const TIPS: Record<string, TipCard> = {
   "Recusa a troca da fralda": { icon: "people", title: "Recusa a troca da fralda", body: "(Feche a porta e deixe o ambiente seguro para que ninguém entre, é importante que a pessoa não fique envergonhado ou constrangido; ninguém se troca na frente de outras pessoas, por isso, explique cada passo e exponha apenas a região que precisa ser higienizada, preservando a intimidade; nunca faça a troca à força; usar uma boneca como exemplo pode ajudar)." },
   "Prevenir quedas e lesões de pele": { icon: "people", title: "Prevenir quedas e lesões de pele", body: "(se estiver acamado é fundamental que mude de posição a cada 4 horas, a fim de evitar feridas na pele (aqui colocar uma imagem das posições possíveis); use hidratantes no corpo diariamente, a pele pode ficar muito ressecada; tire todos os tapetes e obstáculos da casa; mantenha corredores acessíveis e livres; barras de proteção são fundamentais em vários ambientes; verifique com profissional a necessidade de uso de bengala, cadeira de rodas e outros dispositivos)." },
   "Apoio emocional ao cuidador": { icon: "people", title: "Apoio emocional ao cuidador", body: "(nesse momento a sobrecarga da pessoa que cuida aumenta de forma significativa, é fundamental pedir ajuda para os cuidadores, ter momentos de lazer, criar rotina de cuidado e rodízio entre os cuidadores, mas se a ansiedade e tristeza forem frequentes procure ajuda médica)" },
-  "6a · vestir": { icon: "people", title: "6a · vestir", body: "não utilizar roupas e peças com botões e zíper, podem machucar ou abrir com facilidade; escolha roupas mais largas e confortáveis; faça em você primeiro para dar o modelo" },
-  "6b · banho": { icon: "people", title: "6b · banho", body: "acessar item específico" },
-  "6c · higiene": { icon: "people", title: "6c · higiene", body: "" },
-  "6d · incont. urinária": { icon: "people", title: "6d · incont. urinária", body: "" },
-  "6e · incont. fecal": { icon: "people", title: "6e · incont. fecal", body: "" },
   "Vocabulário muito limitado ou ausente": { icon: "people", title: "Vocabulário muito limitado ou ausente", body: "(não consegue se comunicar nem com frases simples; perda de compreensão em geral; deixa de conhecer as pessoas a sua volta; não inicia ou mantém diálogo)" },
   "Perda da capacidade de andar e sentar": { icon: "people", title: "Perda da capacidade de andar e sentar", body: "(não mantém apoio ao sentar-se, dificuldade para andar e ficar em pé mesmo que por pouco tempo, rigidez em pernas e braços)" },
   "Perda do sorriso e do controle da cabeça": { icon: "people", title: "Perda do sorriso e do controle da cabeça", body: "(mantém sempre a cabeça para baixo; não mantém contato de olho; fica com a mesma expressão a maior parte do tempo)" },

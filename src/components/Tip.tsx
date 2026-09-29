@@ -168,7 +168,7 @@ function TipScene({ name, image }: { name: string; image?: string }) {
   }
 }
 
-export default function Tip({ card, showIllustration = true, showFinger = false }: { card: TipCard; showIllustration?: boolean; showFinger?: boolean }) {
+export default function Tip({ card, label = "Dica", showIllustration = true, showFinger = false }: { card: TipCard; label?: string; showIllustration?: boolean; showFinger?: boolean }) {
   const [open, setOpen] = useState(false);
   const tipId = useId();
   const btnRef = useRef<HTMLButtonElement>(null);
@@ -236,7 +236,7 @@ export default function Tip({ card, showIllustration = true, showFinger = false 
           <circle cx="12" cy="12" r="9" />
           <path d="M12 11v5" /><path d="M12 7.5h.01" />
         </svg>
-        <span className="tip-label">Dica</span>
+        <span className="tip-label">{label}</span>
         {showFinger && <span className="tip-finger" aria-hidden="true">👆</span>}
       </button>
 

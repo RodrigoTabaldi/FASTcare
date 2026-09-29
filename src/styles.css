@@ -264,9 +264,10 @@ section{padding:92px 0;position:relative;}
 .sub.underdeveloped{background:#f5f0e8;border-color:#d4c4a8;color:#8c7c54;opacity:.75;font-style:italic;}
 
 /* ---------- balões de dica (tips) ---------- */
-.dblock li.has-tip{list-style:none;margin-left:-18px;display:flex;align-items:flex-start;gap:7px;}
-.dblock li.has-tip::before{content:"•";color:var(--gold-ink);font-weight:800;line-height:1.5;}
-.tip{display:inline-flex;}
+.dblock li.has-tip{list-style:none;margin-left:-18px;display:flex;align-items:flex-start;gap:5px;}
+.dblock li.has-tip::before{content:"•";flex:0 0 auto;color:var(--gold-ink);font-weight:800;line-height:1.5;}
+.signal-text{flex:1 1 auto;min-width:0;}
+.tip{display:inline-flex;flex:0 0 auto;vertical-align:middle;}
 .tip-btn{
   position:relative;min-width:62px;height:27px;flex:0 0 auto;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:4px;padding:0 8px;
   color:var(--tinta);background:#fff;border:1.5px solid #B8C8D8;font-size:11px;font-weight:800;line-height:1;
@@ -278,8 +279,8 @@ section{padding:92px 0;position:relative;}
 .tip-btn svg{flex:0 0 auto;}
 .tip-btn.on .tip-finger{display:none;}
 .tip-btn.hint:not(.on)::after{content:"";position:absolute;inset:-3px;border:2px solid var(--gold-ink);border-radius:50%;pointer-events:none;animation:tip-pulse .9s ease-out infinite;}
-.tip-finger{position:absolute;right:-26px;bottom:-30px;font-family:"Segoe UI Emoji","Apple Color Emoji",sans-serif;font-size:34px;line-height:1;display:block;pointer-events:none;transform-origin:50% 80%;filter:drop-shadow(0 3px 3px rgba(0,0,0,.35));animation:tip-tap 2s ease-in-out infinite;will-change:transform;}
-@keyframes tip-tap{0%,100%{transform:translate(0,0) rotate(0) scale(1)}50%{transform:translate(-8px,-10px) rotate(-3deg) scale(1.02)}}
+.tip-finger{position:absolute;right:-6px;bottom:-7px;font-family:"Segoe UI Emoji","Apple Color Emoji",sans-serif;font-size:19px;line-height:1;display:block;pointer-events:none;transform-origin:50% 80%;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25));animation:tip-tap 3.2s ease-in-out infinite;will-change:transform;}
+@keyframes tip-tap{0%,100%{transform:translate(0,0) rotate(0) scale(1)}50%{transform:translate(-2px,-3px) rotate(-2deg) scale(1.01)}}
 @keyframes tip-pulse{0%{transform:scale(.65);opacity:1}75%,100%{transform:scale(1.35);opacity:0}}
 @media(prefers-reduced-motion:reduce){.tip-finger{animation:none;}}
 @media(prefers-reduced-motion:reduce){.tip-btn.hint:not(.on)::after{animation:none;}}

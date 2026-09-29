@@ -34,7 +34,7 @@ export default function Etapas({ suggestedStage }: EtapasProps) {
         <div className="sec-head reveal">
           <span className="eyebrow">As 7 etapas · interativo</span>
           <h2>Percorra a trilha FAST</h2>
-          <p>Selecione uma etapa para ver os sinais, as ações práticas e o profissional indicado. Nos itens com o selo “Dica”, clique para abrir uma explicação. No teclado, use as setas para navegar.</p>
+          <p>Selecione uma etapa para ver os sinais, as ações práticas e o profissional indicado. Nos itens com o selo “Saiba mais” ou “Dica”, clique para abrir uma explicação. No teclado, use as setas para navegar.</p>
         </div>
 
         <div className="trail" role="tablist" aria-label="Etapas da escala FAST">
@@ -85,7 +85,7 @@ export default function Etapas({ suggestedStage }: EtapasProps) {
                 <h4>Sinais observáveis</h4>
                 <ul>{s.sinais.map((x, i) => (
                   <li key={i} className={TIPS[x] ? "has-tip" : undefined}>
-                    {x}{TIPS[x] && <Tip card={TIPS[x]} showIllustration={!!TIPS[x].image} showFinger={i === 0} />}
+                    <span className="signal-text">{x}</span>{TIPS[x] && <Tip card={TIPS[x]} label="Saiba mais" showIllustration={!!TIPS[x].image} showFinger={i === 0} />}
                   </li>
                 ))}</ul>
               </div>
@@ -98,15 +98,6 @@ export default function Etapas({ suggestedStage }: EtapasProps) {
                 ))}</ul>
               </div>
             </div>
-            {s.subs && (
-              <div className="substages" aria-label="Subetapas - em desenvolvimento">
-                {s.subs.map((x, i) => (
-                  <span className="sub underdeveloped" key={i}>
-                    {x}{TIPS[x] && <Tip card={TIPS[x]} showIllustration={!!TIPS[x].image} />}
-                  </span>
-                ))}
-              </div>
-            )}
             <span className="prof highlight-prof"><Logo size={18} /> <strong>Profissional indicado:</strong> {s.prof}</span>
           </div>
         </div>
