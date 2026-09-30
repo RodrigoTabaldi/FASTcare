@@ -1,0 +1,3 @@
+# Auxiliary HTML files are not part of the Next.js application source.
+/fastcare-standalone.html linguist-detectable=false
+/FASTcare/test-images.html linguist-detectable=false
