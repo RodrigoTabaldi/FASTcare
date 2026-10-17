@@ -101,6 +101,11 @@ function TopicCard({ group, phrases = false }: { group: AdviceGroup; phrases?: b
             </article>
           ))}
         </div>
+        {group.id === "alimentacao" && (
+          <aside className="care-feeding-note">
+            <p><strong>ATENÇÃO:</strong> estar sentado, usar colher pequena ou oferecer iogurte não garante ausência de aspiração. A consistência e a forma de oferta precisam ser individualizadas; as figuras representam situações de cuidado, e não uma prescrição válida para todos.</p>
+          </aside>
+        )}
       </div>
     </details>
   );
@@ -123,6 +128,20 @@ export default function CuidadosEspeciais() {
         <div className="care-grid care-topic-grid">
           {topics.map(topic => <TopicCard key={topic.id} group={topic} phrases={topic.id === "frases"} />)}
         </div>
+
+        <aside className="care-help" id="ajuda">
+          <h3>Links de ajuda</h3>
+          <div className="care-help-links">
+            <a href="https://www.instagram.com/p/Dd_ana1lQxu/?img_index=6" target="_blank" rel="noopener noreferrer">
+              <strong>Auxílio Fralda</strong>
+              <span>Ver orientações no Instagram ↗</span>
+            </a>
+            <a href="https://perguntasaude.com/sus/farmacia-popular/rondonopolis-mt/" target="_blank" rel="noopener noreferrer">
+              <strong>Farmácia Popular</strong>
+              <span>Consultar unidades em Rondonópolis ↗</span>
+            </a>
+          </div>
+        </aside>
 
         <aside className="care-alert" aria-label="Sinal de alerta">
           <span className="care-alert-icon" aria-hidden="true">!</span>
