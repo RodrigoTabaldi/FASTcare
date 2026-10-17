@@ -98,7 +98,7 @@ export default function Etapas({ suggestedStage }: EtapasProps) {
                 ))}</ul>
               </div>
             </div>
-            <span className="prof highlight-prof"><Logo size={18} /> <strong>Profissional indicado:</strong> {s.prof}</span>
+            <span className="prof highlight-prof"><Logo size={18} /><span><strong>Profissional indicado:</strong> {s.prof}</span></span>
           </div>
         </div>
 
