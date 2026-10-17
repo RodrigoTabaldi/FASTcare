@@ -687,9 +687,3 @@ footer .copy{margin-top:40px;border-top:1px solid rgba(255,255,255,.12);padding-
   .care-card summary>img{width:58px;height:56px;}
   .care-card-title{font-size:15px;}
 }
-@media(max-width:520px){
-  .trail{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 8px;}
-  .node,.node:nth-of-type(5){grid-column:auto;}
-  .node:last-child{grid-column:1/-1;}
-  .node .lab{font-size:10px;}
-}
