@@ -42,7 +42,7 @@ export const STAGES: Stage[] = [
     desc: "Primeiros déficits detectáveis em situações de maior exigência: trabalho, viagens, organização.",
     sinais: ["Erra em tarefas complexas no trabalho", "Perde-se em locais desconhecidos", "Dificuldade de concentração"],
     acoes: ["Reduzir demandas complexas", "Buscar avaliação cognitiva formal", "Apoio em finanças e agenda"],
-    prof: "Geriatra / neurologista",
+    prof: "Neuropsicologia",
   },
   {
     n: 4, sev: "Demência leve", title: "Dificuldade em tarefas instrumentais",
