@@ -85,7 +85,7 @@ export default function Etapas({ suggestedStage }: EtapasProps) {
                 <h4>Sinais observáveis</h4>
                 <ul>{s.sinais.map((x, i) => (
                   <li key={i} className={TIPS[x] ? "has-tip" : undefined}>
-                    <span className="signal-text">{x}</span>{TIPS[x] && <Tip card={TIPS[x]} label="Saiba mais" showIllustration={!!TIPS[x].image} showFinger={i === 0} />}
+                    <span className="signal-text">{x}</span>{TIPS[x] && <Tip card={TIPS[x]} label="Saiba mais" showIllustration={!!(TIPS[x].image || TIPS[x].images?.length)} showFinger={i === 0} />}
                   </li>
                 ))}</ul>
               </div>
@@ -93,7 +93,7 @@ export default function Etapas({ suggestedStage }: EtapasProps) {
                 <h4>Ações do cuidador</h4>
                 <ul>{s.acoes.map((x, i) => (
                   <li key={i} className={TIPS[x] ? "has-tip" : undefined}>
-                    {x}{TIPS[x] && <Tip card={TIPS[x]} showIllustration={!!TIPS[x].image} />}
+                    {x}{TIPS[x] && <Tip card={TIPS[x]} showIllustration={!!(TIPS[x].image || TIPS[x].images?.length)} />}
                   </li>
                 ))}</ul>
               </div>

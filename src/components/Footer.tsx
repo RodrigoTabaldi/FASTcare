@@ -40,7 +40,7 @@ export default function Footer() {
             <h4>Referências</h4>
             <p className="ref">
               Reisberg B. Functional Assessment Staging (FAST).<br />
-              <a href="https://pubmed.ncbi.nlm.nih.gov/1504288/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov/1504288</a><br />
+              <a href="https://pubmed.ncbi.nlm.nih.gov/3249767/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov/3249767</a><br />
               Avante Nestlé — apoio ao cuidador.<br />
               <a href="https://www.avantenestle.com.br/" target="_blank" rel="noopener">avantenestle.com.br</a>
             </p>

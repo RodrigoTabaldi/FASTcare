@@ -2,7 +2,7 @@ import { useEffect, useId, useLayoutEffect, useRef, useState, type CSSProperties
 import type { TipCard } from "../data";
 
 /** ilustrações (cenas) grandes que representam cada dica de forma clara */
-function TipScene({ name, image }: { name: string; image?: string }) {
+function TipScene({ name, image, images }: { name: string; image?: string; images?: string[] }) {
   const svg = {
     viewBox: "0 0 320 150", width: "100%", height: "100%",
     preserveAspectRatio: "xMidYMid slice", "aria-hidden": true,
@@ -13,6 +13,10 @@ function TipScene({ name, image }: { name: string; image?: string }) {
     bed: "/images/mudanca-posicao.png",
     routine: "/images/rotina-visual.png",
   };
+
+  if (images?.length) {
+    return <div className="tip-gallery">{images.map((src) => <img key={src} src={src} alt="" loading="lazy" decoding="async" />)}</div>;
+  }
 
   if (image || imageIcons[name]) {
     return (
@@ -207,7 +211,10 @@ export default function Tip({ card, label = "Dica", showIllustration = true, sho
       ) setOpen(false);
     };
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
-    const onScroll = () => setOpen(false);
+    const onScroll = (e: Event) => {
+      if (e.target instanceof Node && popRef.current?.contains(e.target)) return;
+      setOpen(false);
+    };
     document.addEventListener("mousedown", onDown);
     document.addEventListener("keydown", onKey);
     window.addEventListener("scroll", onScroll, true);
@@ -243,10 +250,10 @@ export default function Tip({ card, label = "Dica", showIllustration = true, sho
       {open && (
         <div ref={popRef} id={tipId} className={"tip-pop" + (showIllustration ? "" : " text-only")} role="dialog" aria-labelledby={tipId + "-title"} style={pos}>
           <button type="button" className="tip-close" aria-label="Fechar dica" onClick={() => setOpen(false)}>×</button>
-          {showIllustration && <div className="tip-illus"><TipScene name={card.icon} image={card.image} /></div>}
+          {showIllustration && <div className={"tip-illus" + (card.images?.length ? " gallery" : "")}><TipScene name={card.icon} image={card.image} images={card.images} /></div>}
           <div className="tip-text">
             <strong id={tipId + "-title"}>{card.title}</strong>
-            {card.body && <p>{card.body}</p>}
+            {card.body?.split("\n\n").map((paragraph, index) => <p key={index}>{paragraph}</p>)}
             {card.href && <a className="tip-link" href={card.href} onClick={() => setOpen(false)}>{card.linkLabel ?? "Saiba mais"} <span aria-hidden="true">→</span></a>}
           </div>
         </div>
