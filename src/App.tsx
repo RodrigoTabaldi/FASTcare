@@ -36,8 +36,8 @@ export default function App() {
         <Hero />
         <Marquee />
         <Sobre />
-        <Etapas suggestedStage={suggestedStage} />
         <Autoteste onStageChange={handleStageChange} />
+        <Etapas suggestedStage={suggestedStage} />
         <CuidadosEspeciais />
         <Alertas />
         <Glossario />
